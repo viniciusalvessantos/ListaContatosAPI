@@ -68,10 +68,10 @@ namespace lista_de_contatos.Domain.Entities {
             if (nome.Length > 60) {
                 throw new ArgumentException("Nome invalido.");
             }
-            if (whatsapp.Length < 11) {
+            if (whatsapp.Length > 11) {
                 throw new ArgumentException("WhatsApp invalido.");
             }
-            if (telefone.Length < 11) {
+            if (telefone.Length > 11) {
                 throw new ArgumentException("Telefone invalido");
             }
 

@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35201.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lista_de_contatos", "lista_de_contatos\lista_de_contatos.csproj", "{C3B2115C-70B9-42EA-A789-77F88D59466C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lista_de_contatos", "lista_de_contatos\lista_de_contatos.csproj", "{C3B2115C-70B9-42EA-A789-77F88D59466C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lista_de_contatos.Application", "lista_de_contatos.Application\lista_de_contatos.Application.csproj", "{0EB4E6D2-1AC4-4E89-9E8B-8CF2D17E21CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lista_de_contatos.Application", "lista_de_contatos.Application\lista_de_contatos.Application.csproj", "{0EB4E6D2-1AC4-4E89-9E8B-8CF2D17E21CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lista_de_contatos.Domain", "lista_de_contatos.Domain\lista_de_contatos.Domain.csproj", "{BCAD045A-BF49-48EA-81B6-301035CE2814}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lista_de_contatos.Domain", "lista_de_contatos.Domain\lista_de_contatos.Domain.csproj", "{BCAD045A-BF49-48EA-81B6-301035CE2814}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lista_de_contatos.Infrastructure", "lista_de_contatos.Infrastructure\lista_de_contatos.Infrastructure.csproj", "{F2812BBC-6F56-4772-8D55-9163548098C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lista_de_contatos.Infrastructure", "lista_de_contatos.Infrastructure\lista_de_contatos.Infrastructure.csproj", "{F2812BBC-6F56-4772-8D55-9163548098C0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D431C534-26C7-4452-BB19-C917252B7B11}"
 	ProjectSection(SolutionItems) = preProject
@@ -19,6 +19,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modulos", "Modulos", "{77F05797-A4E2-4FB0-99E8-93A9BC94B1F1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "listaContatos", "listaContatos", "{B3BB941C-B3C1-4E70-A78B-76F2B80AA271}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{54A89FD7-5E1C-4BF9-936A-9B5A9B5DAF9D}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{AB3297FB-3825-4074-8A2E-D50D7CA57A06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +46,14 @@ Global
 		{F2812BBC-6F56-4772-8D55-9163548098C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2812BBC-6F56-4772-8D55-9163548098C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2812BBC-6F56-4772-8D55-9163548098C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54A89FD7-5E1C-4BF9-936A-9B5A9B5DAF9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54A89FD7-5E1C-4BF9-936A-9B5A9B5DAF9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54A89FD7-5E1C-4BF9-936A-9B5A9B5DAF9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54A89FD7-5E1C-4BF9-936A-9B5A9B5DAF9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB3297FB-3825-4074-8A2E-D50D7CA57A06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB3297FB-3825-4074-8A2E-D50D7CA57A06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB3297FB-3825-4074-8A2E-D50D7CA57A06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB3297FB-3825-4074-8A2E-D50D7CA57A06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,6 @@
-﻿using lista_de_contatos.Application.Commands.Register.Usuarios;
+﻿using lista_de_contatos.Application.Commands.Register.Contatos;
+using lista_de_contatos.Application.Commands.Register.Pessoas;
+using lista_de_contatos.Application.Commands.Register.Usuarios;
 using lista_de_contatos.Domain.Entities;
 using lista_de_contatos.Domain.Interfaces;
 using lista_de_contatos.Domain.Utilities;
@@ -23,10 +25,12 @@ namespace lista_de_contatos.Infrastructure.Startup {
 
             services.AddMediatR(cfg => {
                 cfg.RegisterServicesFromAssembly(typeof(RegisterUsuariosCommand).Assembly);
-              // Adiciona os handlers localizados no mesmo assembly que a classe Startup
+                cfg.RegisterServicesFromAssembly(typeof(RegisterPessoasCommand).Assembly);
+                cfg.RegisterServicesFromAssembly(typeof(RegisterContatosCommand).Assembly);
+                // Adiciona os handlers localizados no mesmo assembly que a classe Startup
             });
             services.AddDbContext<ApplicationDbContext>(x => {
-                var connectionString = configuration["Modules:UsersModule:DbConnectionString"];
+                var connectionString = configuration["Modules:listModules:DbConnectionString"];
                 x.UseSqlServer(connectionString, sqlServerOptions => sqlServerOptions.EnableRetryOnFailure());
             });
             services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)

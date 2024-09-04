@@ -1,0 +1,25 @@
+﻿using Infrastructure.Exceptions;
+using lista_de_contatos.Application.Commands.Register.Contatos;
+using lista_de_contatos.Application.Commands.Register.Pessoas;
+using MediatR;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+namespace lista_de_contatos.Controllers {
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ContatosController : ControllerBase {
+        private readonly IMediator _mediator;
+        public ContatosController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErroResponse), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [HttpPost]
+        [Route("register")]
+        public async Task<ActionResult> Register(RegisterContatosCommand request) =>
+            Ok(await _mediator.Send(request));
+    }
+}
