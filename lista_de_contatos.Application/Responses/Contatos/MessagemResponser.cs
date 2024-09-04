@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace lista_de_contatos.Application.Responses.Contatos {
-    public class RegisterResponser {
+    public class MessagemResponser {
 
-        public RegisterResponser(string menssagem) {
-            MessagemResponser = menssagem;
+        public MessagemResponser(string menssagem) {
+            MessagemsResponser = menssagem;
         }
-        public string MessagemResponser { get; }
+        public string MessagemsResponser { get; }
     }
 }

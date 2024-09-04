@@ -10,18 +10,18 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace lista_de_contatos.Application.Commands.Register.Contatos {
-    public class RegisterContatosCommandHandler : IRequestHandler<RegisterContatosCommand, RegisterResponser> {
+    public class RegisterContatosCommandHandler : IRequestHandler<RegisterContatosCommand, MessagemResponser> {
 
         private readonly IContatoRepository _contatoRepository;
         public RegisterContatosCommandHandler(IContatoRepository contatoRepository)
         {
             _contatoRepository = contatoRepository;
         }
-        public async Task<RegisterResponser> Handle(RegisterContatosCommand request, CancellationToken cancellationToken) {
+        public async Task<MessagemResponser> Handle(RegisterContatosCommand request, CancellationToken cancellationToken) {
             try {
                 await _contatoRepository.Add(lista_de_contatos.Domain.Entities.Contatos.New(request.Nome, request.Telefone, request.Email, request.WhatsApp, request.PessoaId));
                 await _contatoRepository.CommitAsync();
-                return new RegisterResponser("Cadastrado contato com sucesso!!");
+                return new MessagemResponser("Cadastrado contato com sucesso!!");
             } catch (Exception e) {
                 throw new ContatoException();
             }

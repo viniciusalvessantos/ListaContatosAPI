@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace lista_de_contatos.Application.Commands.Register.Contatos {
-    public class RegisterContatosCommand : IRequest<RegisterResponser> {
+    public class RegisterContatosCommand : IRequest<MessagemResponser> {
         public RegisterContatosCommand(string nome, string email, string telefone, string whatsapp, Guid pessoaid)
         {
             Nome = nome;

@@ -1,4 +1,5 @@
 ﻿using Infrastructure.Exceptions;
+using lista_de_contatos.Application.Commands.Delete.Contatos;
 using lista_de_contatos.Application.Commands.Register.Contatos;
 using lista_de_contatos.Application.Commands.Register.Pessoas;
 using MediatR;
@@ -21,5 +22,15 @@ namespace lista_de_contatos.Controllers {
         [Route("register")]
         public async Task<ActionResult> Register(RegisterContatosCommand request) =>
             Ok(await _mediator.Send(request));
+
+
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErroResponse), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [HttpDelete]
+        [Route("delete")]
+        public async Task<ActionResult> Delete(DeleteContatosCommand request) =>
+            Ok(await _mediator.Send(request));
+
     }
 }
