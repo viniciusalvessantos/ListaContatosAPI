@@ -5,6 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace lista_de_contatos.Domain.Exceptions {
-    internal class LoginException {
+    public class LoginException : Exception {
     }
 }

@@ -41,8 +41,8 @@ namespace lista_de_contatos.Infrastructure.Startup {
                 var connectionString = configuration["Modules:listModules:DbConnectionString"];
                 x.UseSqlServer(connectionString, sqlServerOptions => sqlServerOptions.EnableRetryOnFailure());
             });
-            services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddIdentity<ApplicationUser, IdentityRole> (options => options.SignIn.RequireConfirmedAccount = true)
+                .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders(); ;
 
             services.Configure<IdentityOptions>(options => {
                 // Password settings.

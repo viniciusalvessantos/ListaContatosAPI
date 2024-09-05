@@ -34,13 +34,16 @@ namespace lista_de_contatos.Infrastructure.Repository {
             return _dbContext.Contatos.FirstOrDefaultAsync(x => x.Id == id, cancellationToken)!;
         }
 
-        public async Task<IEnumerable<Contatos>> GetAll() {
-            return await _dbContext.Contatos.ToListAsync();
+        public async Task<IEnumerable<Contatos>> GetAll(Guid? pessoaId) {
+            if (pessoaId is null) {
+                return await _dbContext.Contatos.ToListAsync();
+            } else {
+                return await _dbContext.Contatos.Where(c=>c.PessoaId == pessoaId).ToListAsync();
+            }
+            
         }
 
-        public async Task<IEnumerable<Contatos>> GetContatosPessoaALL(Guid pessoaId){
-            return await _dbContext.Contatos.Where(c=>c.PessoaId == pessoaId).ToListAsync();
-        }
+      
 
         public async Task Update(Guid id, string nome, string email, string telefone, string whatsapp) {
             var existeContato = await _dbContext.Contatos.FindAsync(id);
