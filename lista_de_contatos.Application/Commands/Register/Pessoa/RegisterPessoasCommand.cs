@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace lista_de_contatos.Application.Commands.Register.Pessoas {
-    public class RegisterPessoasCommand : IRequest<RegisterResponser> {
+    public class RegisterPessoasCommand : IRequest<MessagemResponser> {
         public RegisterPessoasCommand(string nome, string sobrenome, string telefone, string email)
         {
             Nome = nome;

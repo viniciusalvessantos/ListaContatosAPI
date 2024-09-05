@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace lista_de_contatos.Domain.Interfaces {
     public interface IContatoRepository {
         Task Add(Contatos contatos);
-        Task Update(Guid id, string nome, string email, string telefone, string whatsapp, Guid pessoaid);
+        Task Update(Guid id, string nome, string email, string telefone, string whatsapp);
         Task Delete(Guid id);
         Task<IEnumerable<Contatos>> GetAll();
         Task<IEnumerable<Contatos>> GetContatosPessoaALL(Guid pessoaId);

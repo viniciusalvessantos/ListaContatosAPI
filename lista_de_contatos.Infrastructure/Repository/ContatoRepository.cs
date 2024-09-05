@@ -42,7 +42,7 @@ namespace lista_de_contatos.Infrastructure.Repository {
             return await _dbContext.Contatos.Where(c=>c.PessoaId == pessoaId).ToListAsync();
         }
 
-        public async Task Update(Guid id, string nome, string email, string telefone, string whatsapp, Guid pessoaid) {
+        public async Task Update(Guid id, string nome, string email, string telefone, string whatsapp) {
             var existeContato = await _dbContext.Contatos.FindAsync(id);
             if (existeContato is null) {
                 throw new KeyNotFoundException($"O contato de id {id} não existe!!!");

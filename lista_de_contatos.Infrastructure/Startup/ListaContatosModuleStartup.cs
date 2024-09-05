@@ -1,7 +1,10 @@
 ﻿using lista_de_contatos.Application.Commands.Delete.Contatos;
+using lista_de_contatos.Application.Commands.Delete.Pessoas;
 using lista_de_contatos.Application.Commands.Register.Contatos;
 using lista_de_contatos.Application.Commands.Register.Pessoas;
 using lista_de_contatos.Application.Commands.Register.Usuarios;
+using lista_de_contatos.Application.Commands.Update.Contatos;
+using lista_de_contatos.Application.Commands.Update.Pessoas;
 using lista_de_contatos.Domain.Entities;
 using lista_de_contatos.Domain.Interfaces;
 using lista_de_contatos.Domain.Utilities;
@@ -29,6 +32,9 @@ namespace lista_de_contatos.Infrastructure.Startup {
                 cfg.RegisterServicesFromAssembly(typeof(RegisterPessoasCommand).Assembly);
                 cfg.RegisterServicesFromAssembly(typeof(RegisterContatosCommand).Assembly);
                 cfg.RegisterServicesFromAssembly(typeof(DeleteContatosCommand).Assembly);
+                cfg.RegisterServicesFromAssembly(typeof(DeletePessoasCommand).Assembly);
+                cfg.RegisterServicesFromAssembly(typeof(UpdateContatosCommand).Assembly);
+                cfg.RegisterServicesFromAssembly(typeof(UpdatePessoasCommand).Assembly);
                 // Adiciona os handlers localizados no mesmo assembly que a classe Startup
             });
             services.AddDbContext<ApplicationDbContext>(x => {

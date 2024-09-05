@@ -7,9 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\Delete\Pessoas\" />
-    <Folder Include="Commands\Update\Contatos\" />
-    <Folder Include="Commands\Update\Pessoas\" />
     <Folder Include="Queries\Contatos\" />
     <Folder Include="Queries\Usuarios\" />
     <Folder Include="Queries\Pessoas\" />

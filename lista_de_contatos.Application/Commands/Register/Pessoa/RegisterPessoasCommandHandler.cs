@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using lista_de_contatos.Domain.Entities;
 
 namespace lista_de_contatos.Application.Commands.Register.Pessoas {
-    public class RegisterPessoasCommandHandler : IRequestHandler<RegisterPessoasCommand, RegisterResponser> {
+    public class RegisterPessoasCommandHandler : IRequestHandler<RegisterPessoasCommand, MessagemResponser> {
 
         private readonly IPessoaRepository _pessoaRepository;
         public RegisterPessoasCommandHandler(IPessoaRepository pessoaRepository)
@@ -18,11 +18,11 @@ namespace lista_de_contatos.Application.Commands.Register.Pessoas {
             _pessoaRepository = pessoaRepository;
         }
 
-        public async Task<RegisterResponser> Handle(RegisterPessoasCommand request, CancellationToken cancellationToken) {
+        public async Task<MessagemResponser> Handle(RegisterPessoasCommand request, CancellationToken cancellationToken) {
             try {
                 await _pessoaRepository.Add(lista_de_contatos.Domain.Entities.Pessoas.New(request.Nome, request.SobreNome, request.Telefone, request.Email));
                 await _pessoaRepository.CommitAsync();
-                return new RegisterResponser("Cadastrado com sucesso!!");
+                return new MessagemResponser("Cadastrado com sucesso!!");
             } catch (Exception ex) {
                 throw new PessoaException();
 
