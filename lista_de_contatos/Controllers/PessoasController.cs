@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace lista_de_contatos.Controllers {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class PessoasController : ControllerBase {
         private readonly IMediator _mediator;
         public PessoasController(IMediator mediator)
