@@ -31,7 +31,7 @@ jobs:
       with:
         push: true
         tags: neogenessdigital.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_6de6276d2ff346aa8e9593197acf5615 }}/testevaga2:${{ github.sha }}
-        file: ./Dockerfile
+        file: ./lista_de_contatos/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
