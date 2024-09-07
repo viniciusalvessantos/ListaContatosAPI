@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://neogenessdigital.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_902e374490234e928af17702f505597d }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_219fe64c5ec5492a87e3fe038e32a232 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_6de6276d2ff346aa8e9593197acf5615 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_aa4bdab6ab8f4a9c90e50fa6ffec2b8c }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: neogenessdigital.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_902e374490234e928af17702f505597d }}/listacontatos:${{ github.sha }}
+        tags: neogenessdigital.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_6de6276d2ff346aa8e9593197acf5615 }}/testevaga2:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'apitestevaga'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_c7bc3d43f8d74377b3f01f64f4a3dbef }}
-        images: 'neogenessdigital.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_902e374490234e928af17702f505597d }}/listacontatos:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_5f66179e25a24f20b249911c57282b4c }}
+        images: 'neogenessdigital.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_6de6276d2ff346aa8e9593197acf5615 }}/testevaga2:${{ github.sha }}'
